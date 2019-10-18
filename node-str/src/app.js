@@ -8,7 +8,12 @@ const app = express();
 const router = express.Router();
 
 //Conecta com o banco
-mongoose.connect('mongodb+srv://nodestr:nodestr@nodestr-nc0u7.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://teste:teste@cluster0-8i2kj.mongodb.net/test?retryWrites=true&w=majority', {
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useFindAndModify: true,
+});
 
 //Carrega os Models
 const Product = require('./models/product');
